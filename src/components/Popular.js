@@ -33,7 +33,7 @@ function ReposGrid({ repos }) {
               const { login, avatar_url } = owner;
 
               return (
-                <li key={html_url} className="repo bg-light">
+                <li key={html_url} className="card bg-light">
                     <h4 className="header-lg center-text">#{index + 1}</h4>
                     <img className="avatar" src={avatar_url} alt={`Avatar for ${login}`} />
                     <h2 className="center-text">
@@ -122,7 +122,7 @@ class Popular extends Component {
                      onUpdateLanguage={this.updateLanguage}
                     />
                 {this.onLoading() && <p>LOADING</p>}
-                {error && <p>{error}</p>}
+                {error && <p className="center-text error">{error}</p>}
             
                 {repos[selectedLanguage] && <ReposGrid 
                     repos={repos[selectedLanguage]} 
